@@ -12,7 +12,7 @@ body {
     flex-direction: column;
   }
   
-<<<<<<< HEAD
+
   header {
     width: 100%;
     height: 200px;
@@ -24,7 +24,7 @@ body {
   }
   @media (max-width: 900px) {
   header {
-=======
+
 header {
   background-color: #0077cc;
   color: white;
@@ -69,7 +69,6 @@ header nav a:hover {
 }
 @media (max-width: 900px) {
   .portada {
->>>>>>> 38b9aaebfebd22890a277a05d0ef055172ecb7c0
     height: 150px;
   }
 }
