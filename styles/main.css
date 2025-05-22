@@ -5,23 +5,51 @@
     box-sizing: border-box;
   }
   
-  body {
+body {
     font-family: Arial, sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
   }
   
-  header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    background-color: #0077cc;
-    color: white;
-    padding: 1em;
-  }
+header {
+  background-color: #0077cc;
+  color: white;
+  padding: 1em 2em;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+header nav ul {
+  display: flex;
+  gap: 1.5em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  transition: background-color 0.3s ease;
+}
+
+header nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
 .portada{
   width: 100%;
   height: 250px;
