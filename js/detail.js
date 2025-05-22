@@ -1,77 +1,22 @@
 const params = new URLSearchParams(window.location.search);
-// mientras se define la logica del params.get, se le asigna un siteId a mano
+const siteId = params.get("id");
 
-// const siteId = params.get('id');
-const siteId = "detail"
+async function cargarInformacionSitio(id) {
+  const infoDiv = document.getElementById("info");
+  try {
+    const response = await fetch(`https://tu-servidor.com/api/sitios/${id}/`);
+    if (!response.ok) throw new Error("Error al consultar el servidor");
 
-const ejemploData = {
-  titulo: "Parque los fundadores",
-  descripcion: "Ubicados en las afueras de Villavicencio, este parque ofrece un entorno natural espectacular ideal para los amantes de la naturaleza.",
-  imagen: "/public/images/prueba.png"
-};
+    const data = await response.json();
 
-
-    async function cargarInformacionSitio(id) {
-      const infoDiv = document.getElementById('info');
-      try {
-        // Mientras terminan el backend, voy a usar un json de ejemplo
-        // const response = await fetch(`https://tu-servidor.com/api/sitios/${id}/`);
-        // if (!response.ok) throw new Error('Error al consultar el servidor');
-        // const data = await response.json();
-        const data = ejemploData;
-
-    infoDiv.classList.remove('loading', 'error');
-
-    infoDiv.innerHTML = `
-      
-    <div class="contenido-sitio">
-        <h2>${data.titulo}</h2>
-        <p>${data.descripcion}</p>
-        <img src="${data.imagen}" alt="${data.titulo}">
-      </div>
-
-<div class="contenido-sitio">
-        <h2>${data.titulo}</h2>
-        <p>${data.descripcion}</p>
-        <img src="${data.imagen}" alt="${data.titulo}">
-      </div>
-
-      <div class="contenido-sitio">
-        <h2>${data.titulo}</h2>
-        <p>${data.descripcion}</p>
-        <img src="${data.imagen}" alt="${data.titulo}">
-      </div>
-
-      <div class="contenido-sitio">
-        <h2>${data.titulo}</h2>
-        <p>${data.descripcion}</p>
-        <img src="${data.imagen}" alt="${data.titulo}">
-      </div>
-
-      <div class="contenido-sitio">
-        <h2>${data.titulo}</h2>
-        <p>${data.descripcion}</p>
-        <img src="${data.imagen}" alt="${data.titulo}">
-      </div>
-
-      <div class="contenido-sitio">
-        <h2>${data.titulo}</h2>
-        <p>${data.descripcion}</p>
-        <img src="${data.imagen}" alt="${data.titulo}">
-      </div>
-    `;
+    infoDiv.classList.remove("loading", "error");
+    infoDiv.innerHTML = `<H2>hello</H2>`; // Aquí puedes personalizar cómo mostrar la información del sitio
   } catch (error) {
-    infoDiv.classList.remove('loading');
-    infoDiv.classList.add('error');
-    infoDiv.textContent = 'Error al cargar la información del sitio.';
+    infoDiv.classList.remove("loading");
+    infoDiv.classList.add("error");
+    infoDiv.textContent = "Error al cargar la información del sitio.";
     console.error(error);
   }
-    }
+}
 
-    if (siteId) {
-        // alert(siteId); es mas comodo si es un console.log
-        console.log(siteId);
-        cargarInformacionSitio(siteId);
-    } else {
-      document.getElementById('info').textContent = 'No se proporcionó un ID de sitio válido.';
-    }
+cargarInformacionSitio(siteId);
