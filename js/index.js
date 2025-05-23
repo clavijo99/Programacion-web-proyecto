@@ -67,5 +67,3 @@ const ejemploData = [
     } else {
       document.getElementById('info').textContent = 'No se proporcionó un ID de sitio válido.';
     }
-
-    
