@@ -26,6 +26,17 @@ header {
   color: white;
     
 }
+@media (max-width: 900px) {
+  header {
+    height: 200px;
+  }
+}
+
+@media (max-width: 300px) {
+  header {
+    height: 100px;
+  }
+}
 
 nav {
   display: flex;
