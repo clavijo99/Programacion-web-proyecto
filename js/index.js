@@ -4,62 +4,54 @@ const params = new URLSearchParams(window.location.search);
 // const siteId = params.get('id');
 const siteId = "detail"
 
-const ejemploData = {
-  titulo: "Parque los fundadores",
-  descripcion: "Ubicados en las afueras de Villavicencio, este parque ofrece un entorno natural espectacular ideal para los amantes de la naturaleza.",
-  imagen: "/public/images/prueba.png"
-};
+const ejemploData = [
+  {
+    titulo: "Parque los Fundadores",
+    descripcion: "Un parque icónico de Villavicencio, ideal para caminatas y relajarse en familia.",
+    imagen: "/public/images/prueba.png"
+  },
+  {
+    titulo: "Parque los Fundadores",
+    descripcion: "Un parque icónico de Villavicencio, ideal para caminatas y relajarse en familia.",
+    imagen: "/public/images/prueba.png"
+  },
+  {
+    titulo: "Parque los Fundadores",
+    descripcion: "Un parque icónico de Villavicencio, ideal para caminatas y relajarse en familia.",
+    imagen: "/public/images/prueba.png"
+  },
+  {
+    titulo: "Parque los Fundadores",
+    descripcion: "Un parque icónico de Villavicencio, ideal para caminatas y relajarse en familia.",
+    imagen: "/public/images/prueba.png"
+  }
+];
+
 
 
     async function cargarInformacionSitio(id) {
       const infoDiv = document.getElementById('info');
       try {
         // Mientras terminan el backend, voy a usar un json de ejemplo
-        // const response = await fetch(`https://tu-servidor.com/api/sitios/${id}/`);
+        // const response = await fetch(https://tu-servidor.com/api/sitios/${id}/);
         // if (!response.ok) throw new Error('Error al consultar el servidor');
         // const data = await response.json();
         const data = ejemploData;
 
     infoDiv.classList.remove('loading', 'error');
+    infoDiv.innerHTML = '';
 
-    infoDiv.innerHTML = `
-      
-    <div class="contenido-sitio">
-        <h2>${data.titulo}</h2>
-        <p>${data.descripcion}</p>
-        <img src="${data.imagen}" alt="${data.titulo}">
-      </div>
+    data.forEach((sitio) => {
+      const tarjeta = document.createElement('div');
+      tarjeta.className = 'contenido-sitio';
+      tarjeta.innerHTML = `
+        <h2>${sitio.titulo}</h2>
+        <p>${sitio.descripcion}</p>
+        <img src="${sitio.imagen}" alt="${sitio.titulo}">
+      `;
+      infoDiv.appendChild(tarjeta);
+    });
 
-<div class="contenido-sitio">
-        <h2>${data.titulo}</h2>
-        <p>${data.descripcion}</p>
-        <img src="${data.imagen}" alt="${data.titulo}">
-      </div>
-
-      <div class="contenido-sitio">
-        <h2>${data.titulo}</h2>
-        <p>${data.descripcion}</p>
-        <img src="${data.imagen}" alt="${data.titulo}">
-      </div>
-
-      <div class="contenido-sitio">
-        <h2>${data.titulo}</h2>
-        <p>${data.descripcion}</p>
-        <img src="${data.imagen}" alt="${data.titulo}">
-      </div>
-
-      <div class="contenido-sitio">
-        <h2>${data.titulo}</h2>
-        <p>${data.descripcion}</p>
-        <img src="${data.imagen}" alt="${data.titulo}">
-      </div>
-
-      <div class="contenido-sitio">
-        <h2>${data.titulo}</h2>
-        <p>${data.descripcion}</p>
-        <img src="${data.imagen}" alt="${data.titulo}">
-      </div>
-    `;
   } catch (error) {
     infoDiv.classList.remove('loading');
     infoDiv.classList.add('error');
