@@ -106,115 +106,80 @@ header nav a:hover {
   
   
   /* Inicio seccion detalle */
-
-  /* Contenedor principal */
-#info {
-  padding: 2rem;
-  text-align: center;
-  font-family: Arial, sans-serif;
+h1 {
+  margin: 48px;
 }
-
-.loading {
-  font-style: italic;
-  color: gray;
-}
-
-.error {
-  color: red;
-  font-weight: bold;
-}
-
-/* Estilos del contenido del sitio */
-
-.container-detalle {
+#sites {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
   flex-wrap: wrap;
-  gap: 2rem;
-} 
+  gap: 48px;
+}
 
-.contenido-sitio {
-  background-color: #0077cc;
+.sites-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  padding: 0 20px;
+}
+
+/* Tarjeta individual */
+.site {
+  width: 300px;
+  background: #fff;
   border-radius: 12px;
-  max-width: 300px;
-  width: 100%;
-  height: 500px;
-  padding: 1.5rem;
-  box-sizing: border-box;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
 }
 
-.contenido-sitio h2 {
-  font-size: 2rem;
-  color: #2c3e50;
-  margin-bottom: 1rem;
+.site:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
 }
 
-.contenido-sitio p {
-  font-size: 1.1rem;
-  color: #34495e;
-  margin-bottom: 1.5rem;
+/* Imagen principal */
+.site img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
-.contenido-sitio img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+/* Contenido textual */
+.site-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
-/* fin seccion detalle */
-
-    .lugares-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2em;
-    margin-top: 2em;
+.site h3 {
+  margin: 0 0 10px;
+  font-size: 1.4em;
+  color: #1a237e;
 }
 
-.lugar-card {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
+.description {
+  font-size: 0.95em;
+  color: #444;
+  margin-bottom: 15px;
 }
 
-.lugar-card:hover {
-    transform: translateY(-5px);
-}
-
-.lugar-imagen {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.lugar-contenido {
-    padding: 1.5em;
-}
-
-.lugar-nombre {
-    font-size: 1.5em;
-    color: #0077cc;
-    margin-bottom: 0.5em;
-}
-
-.lugar-descripcion {
-    color: #666;
-    line-height: 1.6;
+/* Información adicional */
+.info p {
+  margin: 4px 0;
+  font-size: 0.9em;
+  color: #555;
 }
 
 .rating {
-  font-size: 16px;
-  color: gold;
-  margin-top: 5px;
+  font-weight: bold;
+  color: #e67e22;
+  font-size: 1.1em;
+  margin-top: 10px;
 }
+
 /* inicio footer */
 footer {
     background-color: #222;
