@@ -6,20 +6,27 @@ const sites = document.getElementById("sites")
 const response = await fetch("https://programacion-web-backend.onrender.com/api/sites");
 const data = await response.json();
 
-sites.forEach(site => {
+data.forEach(site => {
   const container = document.createElement("div");
 
-  container.innerHTML = `<div class="site">
-  <h3>${site.name}</h3>
-  <p>${site.descripcion}</p>
-  <img src="${site.imagen}"</>
-  <p class="rating">★ ${site.calificacion}</p>`;
+  container.innerHTML = `<div class="card">
+  <img src="${site.imagen}" alt="Imagen del sitio">
+  <div class="card-content">
+    <h3>${site.nombre}</h3>
+    <p>${site.descripcion}</p>
+    <div class="stars">
+      ★${site.calificacion}
+    </div>
+  </div>
+</div>`;
 
 
   sites.appendChild(container);
 });
 
-getSites();
 
 }
+getSites();
+
+
 

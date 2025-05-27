@@ -1,0 +1,49 @@
+#sites{
+  display: flex;
+  flex-wrap: wrap; /* permite que bajen si no caben */
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-family: sans-serif;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card h2 {
+  font-size: 18px;
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.card p.descripcion {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.card .calificacion {
+  font-size: 16px;
+  color: #f39c12; /* color amarillo para las estrellas */
+}
