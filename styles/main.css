@@ -1,3 +1,4 @@
+
 /* style.css */
 * {
     margin: 0;
@@ -496,3 +497,56 @@ footer {
     }
 }
 /* fin del footer */
+
+
+
+/* about */
+
+.about-page {
+      max-width: 800px;
+      margin: 40px auto 60px auto;
+      padding: 24px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    .about-page section {
+      margin-bottom: 32px;
+    }
+    .about-hero h2 {
+      color: #218838;
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .about-page h3 {
+      color: #155724;
+      margin-bottom: 8px;
+      font-size: 1.3rem;
+    }
+    .about-page p {
+      color: #333;
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+    .about-features ul {
+      margin: 0 0 0 20px;
+      padding: 0;
+      color: #444;
+    }
+    .about-features li {
+      margin-bottom: 8px;
+      list-style: disc inside;
+    }
+    @media (max-width: 600px) {
+      .about-page {
+        padding: 10px;
+        margin: 16px 4px 40px 4px;
+      }
+      .about-hero h2 {
+        font-size: 1.3rem;
+      }
+      .about-page h3 {
+        font-size: 1.05rem;
+      }
+    }
