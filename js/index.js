@@ -1,22 +1,27 @@
-const params = new URLSearchParams(window.location.search);
-const siteId = params.get("id");
+async function getSites() {
+  const sites = document.getElementById("sites");
 
-async function cargarInformacionSitio(id) {
-  // const infoDiv = document.getElementById("info");
-  // try {
-  //   const response = await fetch(`https://tu-servidor.com/api/sitios/${id}/`);
-  //   if (!response.ok) throw new Error("Error al consultar el servidor");
+  const response = await fetch("https://programacion-web-backend.onrender.com/api/sites");
+  const data = await response.json();
+  data.forEach(site => {
+    const container = document.createElement("div");
 
-  //   const data = await response.json();
+    container.innerHTML = `<div class="card">
+      <img src="${site.imagen}" alt="Imagen del sitio">
+      <div class="card-content">
+        <h3>
+          <a href="pages/detail.html?id=${site.id}">${site.nombre}</a>
+        </h3>
+        <p>${site.descripcion}</p>
+        <div class="stars">
+          ★${site.calificacion}
+        </div>
+      </div>
+    </div>`;
 
-  //   infoDiv.classList.remove("loading", "error");
-  //   infoDiv.innerHTML = `<H2>hello</H2>`; // Aquí puedes personalizar cómo mostrar la información del sitio
-  // } catch (error) {
-  //   infoDiv.classList.remove("loading");
-  //   infoDiv.classList.add("error");
-  //   infoDiv.textContent = "Error al cargar la información del sitio.";
-  //   console.error(error);
-  // }
+    sites.appendChild(container);
+  });
 }
+getSites();
 
-cargarInformacionSitio(siteId);
+
