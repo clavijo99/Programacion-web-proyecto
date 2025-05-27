@@ -26,53 +26,104 @@
   </header>
 
   <!-- CONTENIDO -->
-  <main>
-    <h2>Página de contacto</h2>
-    <p>Contenido en blanco por ahora.</p>
-  </main>
+  <main class="contact-main">
+    <!-- Hero Section -->
+    <section class="contact-hero">
+      <div class="hero-content">
+        <h1>Contáctanos</h1>
+        <p>Estamos aquí para ayudarte a planificar tu aventura en Villavicencio</p>
+      </div>
+    </section>
 
+    <!-- Contact Content -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-grid">
+          
+          <!-- Contact Form -->
+          <div class="contact-form-container">
+            <h2>Envíanos un mensaje</h2>
+            <form class="contact-form">
+              <div class="form-group">
+                <label for="name">Nombre completo</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="phone">Teléfono</label>
+                <input type="tel" id="phone" name="phone">
+              </div>
+              
+              <div class="form-group">
+                <label for="subject">Asunto</label>
+                <select id="subject" name="subject" required>
+                  <option value="">Selecciona un tema</option>
+                  <option value="informacion">Información turística</option>
+                  <option value="reservas">Reservas y tours</option>
+                  <option value="eventos">Eventos especiales</option>
+                  <option value="sugerencias">Sugerencias</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" rows="6" required placeholder="Cuéntanos cómo podemos ayudarte..."></textarea>
+              </div>
+              
+              <button type="submit" class="submit-btn">
+                Enviar mensaje
+              </button>
+            </form>
+          </div>
+
+
+  </main>
   <!-- FOOTER -->
   <footer>
     <div class="footer-container">
-    <div class="footer-section">
+      <div class="footer-section">
         <h2>Villavicencio Turístico</h2>
         <p>
-        Descubre los paisajes, sabores y cultura de la capital del Meta. Vive la experiencia llanera como nunca antes.
+          Descubre los paisajes, sabores y cultura de la capital del Meta. Vive la experiencia llanera como nunca antes.
         </p>
-    </div>
+      </div>
 
-    <div class="footer-section">
+      <div class="footer-section">
         <h3>Enlaces útiles</h3>
         <ul>
           <li><a href="../index.html">Inicio</a></li>
           <li><a href="about.html">Acerca</a></li>
           <li><a href="contact.html">Contacto</a></li>
         </ul>
-    </div>
+      </div>
 
-    <div class="footer-section">
+      <div class="footer-section">
         <h3>Contacto</h3>
         <ul>
-        <li>📍 Villavicencio, Meta, Colombia</li>
-        <li>📞 +57 8 661 2345</li>
-        <li>✉️ turismo@villavicencio.gov.co</li>
+          <li>📍 Villavicencio, Meta, Colombia</li>
+          <li>📞 +57 8 661 2345</li>
+          <li>✉️ turismo@villavicencio.gov.co</li>
         </ul>
-    </div>
+      </div>
 
-    <div class="footer-section">
+      <div class="footer-section">
         <h3>Síguenos</h3>
         <a href="#">🌐 Facebook</a><br>
         <a href="#">📸 Instagram</a><br>
         <a href="#">🎥 YouTube</a>
+      </div>
     </div>
+
+    <!-- Línea inferior -->
+    <div class="footer-bottom">
+      &copy; 2025 Villavicencio Turístico. Todos los derechos reservados.
     </div>
-
-
-  <!-- Línea inferior -->
-  <div class="mt-10 text-center text-sm border-t border-green-700 pt-4">
-    &copy; 2025 Villavicencio Turístico. Todos los derechos reservados.
-  </div>
-</footer>
-
+  </footer>
 </body>
 </html>
